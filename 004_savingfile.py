@@ -8,29 +8,33 @@ classlib = open('files/Osc.sc')
 
 # regex to find the kubes containing classes
 classseparator = re.compile(" : ")
+comment = re.compile("//")
 ar = re.compile("ar")
 
 f = open('test.snippets', 'w')
 
 while True:
-    line = classlib.readline().lstrip()
+    line = classlib.readline().strip()
+    # checks if the line is a comment
+    # TODO: check if something is a comment
     # checks if the Class : Type string matches
     check = re.search(classseparator, line)
     if check:
         # grabs classname and reads following line
         classname = line.split(' ', 1)[0]
         print classname
-        print ('snippet '+classname.lower()+' "'+classname+'" '+'i')
-        # TODO: add classname to snippet
+        # print ('snippet '+classname.lower()+' "'+classname+'" '+'i')
+        # f.write('snippet '+classname.lower()+' "'+classname+'" '+'i'+'\n')
         line = classlib.readline().strip()
         # checks if the method is correct
         check = re.search(ar, line)
         if check:
-            # TODO: add a .ar option to the snippet
             line = classlib.readline().strip()
             # check if this is actually the end of the line
             if line.find(";") != -1:
                 # slightly format the string for sclang-friendly application
+                print ('snippet '+classname.lower()+' "'+classname+'" '+'i')
+                f.write('snippet '+classname.lower()+' "'+classname+'" '+'i'+'\n')
                 snippetline = line.replace('=', ':')
                 snippetline = snippetline.replace('arg ', '(')
                 snippetline = snippetline.replace(';', '')
@@ -49,6 +53,8 @@ while True:
                 formatted += ')'
             else:
                 print 'exceptional string'
+                print ('snippet '+classname.lower()+' "'+classname+'" '+'i')
+                f.write('snippet '+classname.lower()+' "'+classname+'" '+'i'+'\n')
                 # create a duplicate of the previous line, then read a new one
                 # to the same string, then parse again and see what happens
                 # only for longer strings
@@ -71,5 +77,7 @@ while True:
                 formatted = formatted[:-1]
                 formatted += ')'
             print classname+'${1:.ar}'+formatted
+            f.write(classname+'${1:.ar}'+formatted+'\n')
             print 'endsnippet'
+            f.write('endsnippet'+'\n \n')
     sleep(0.01)

@@ -1,0 +1,76 @@
+snippet osc "Osc" i
+Osc${1:.ar}(${2:(bufnum},${3: freq:440.0},${4: phase:0.0},${5: mul:1.0},${6: add:0.0})
+endsnippet
+ 
+snippet sinosc "SinOsc" i
+SinOsc${1:.ar}(${2:(freq:440.0},${3: phase:0.0},${4: mul:1.0},${5: add:0.0})
+endsnippet
+ 
+snippet sinoscfb "SinOscFB" i
+SinOscFB${1:.ar}(${2:(freq:440.0},${3: feedback:0.0},${4: mul:1.0},${5: add:0.0})
+endsnippet
+ 
+snippet oscn "OscN" i
+OscN${1:.ar}(${2:(bufnum},${3: freq:440.0},${4: phase:0.0},${5: mul:1.0},${6: add:0.0})
+endsnippet
+ 
+snippet vosc "VOsc" i
+VOsc${1:.ar}(${2:(bufpos},${3: freq:440.0},${4: phase:0.0},${5: mul:1.0},${6: add:0.0})
+endsnippet
+ 
+snippet vosc3 "VOsc3" i
+VOsc3${1:.ar}(${2:(bufpos},${3: freq1:110.0},${4: freq2:220.0},${5: freq3:440.0},${6: mul:1.0},${7: add:0.0})
+endsnippet
+ 
+snippet cosc "COsc" i
+COsc${1:.ar}(${2:(bufnum},${3: freq:440.0},${4: beats:0.5},${5: mul:1.0},${6: add:0.0})
+endsnippet
+ 
+snippet formant "Formant" i
+Formant${1:.ar}(${2:(fundfreq : 440.0},${3: formfreq : 1760.0},${4: bwfreq : 880.0},${5: mul : 1.0},${6: add : 0.0})
+endsnippet
+ 
+snippet lfsaw "LFSaw" i
+LFSaw${1:.ar}(${2:(freq : 440.0},${3: iphase : 0.0},${4: mul : 1.0},${5: add : 0.0})
+endsnippet
+ 
+snippet lfgauss "LFGauss" i
+LFGauss${1:.ar}(${2:(duration : 1},${3: width : 0.1},${4: iphase : 0.0},${5: loop : 1},${6: doneAction : 0})
+endsnippet
+ 
+snippet lfpulse "LFPulse" i
+LFPulse${1:.ar}(${2:(freq : 440.0},${3: iphase : 0.0},${4: width : 0.5},${5: mul : 1.0},${6: add : 0.0})
+endsnippet
+ 
+snippet varsaw "VarSaw" i
+VarSaw${1:.ar}(${2:(freq : 440.0},${3: iphase : 0.0},${4: width : 0.5},${5: mul : 1.0},${6: add : 0.0})
+endsnippet
+ 
+snippet impulse "Impulse" i
+Impulse${1:.ar}(${2:(freq : 440.0},${3: phase : 0.0},${4: mul : 1.0},${5: add : 0.0})
+endsnippet
+ 
+snippet syncsaw "SyncSaw" i
+SyncSaw${1:.ar}(${2:(syncFreq : 440.0},${3: sawFreq : 440.0},${4: mul : 1.0},${5: add : 0.0})
+endsnippet
+ 
+snippet //tpulse "//TPulse" i
+//TPulse${1:.ar}(${2://		(trig : 0.0},${3: freq : 440.0},${4: width : 0.5},${5: mul : 1.0},${6: add : 0.0})
+endsnippet
+ 
+snippet index "Index" i
+Index${1:.ar}(${2:(bufnum},${3: in : 0.0},${4: mul : 1.0},${5: add : 0.0})
+endsnippet
+ 
+snippet degreetokey "DegreeToKey" i
+DegreeToKey${1:.ar}(${2:(bufnum},${3: in : 0.0},${4: octave : 12.0},${5: mul : 1.0},${6: add : 0.0})
+endsnippet
+ 
+snippet select "Select" i
+Select${1:.ar}(${2:(which},${3: array})
+endsnippet
+ 
+snippet vibrato "Vibrato" i
+Vibrato${1:.ar}(${2:(freq : 440.0},${3: rate : 6},${4: depth : 0.02},${5: delay : 0.0},${6: onset : 0.0},${7:rateVariation : 0.04},${8: depthVariation : 0.1},${9: iphase : 0.0)})
+endsnippet
+ 
